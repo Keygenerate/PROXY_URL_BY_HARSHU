@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ff-proxy-server
+    runtime: python
+    plan: free
+    buildCommand: pip install -r proxy_requirements.txt
+    startCommand: python proxy_server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 10000
+      - key: PROXY_HOST
+        value: proxy-url-by-harshu.onrender.com
